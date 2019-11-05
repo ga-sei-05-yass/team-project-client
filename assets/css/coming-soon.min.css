@@ -219,3 +219,7 @@ video {
 .navbar {
   background-color: gray;
 }
+
+.alert {
+  z-index: 4;
+}

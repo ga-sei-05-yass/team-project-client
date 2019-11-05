@@ -2,72 +2,70 @@
 
 const store = require('../store.js')
 
+// adding Bootstrap alert box by adding class and role
 const successAlert = function (newText) {
-  // create new div element
-  const newAlert = document.createElement('div')
-  // add classes and role to div
-  newAlert.addClass('alert')
-  newAlert.addClass('alert-success')
-  newAlert.addRole('alert')
-  $('.alert').text(newText)
-}
-const failureAlert = function (newText) {
-  const newAlert = document.createElement('div')
-  newAlert.addClass('alert')
-  newAlert.addClass('alert-danger')
-  newAlert.addRole('alert')
+  $('.alert').addClass('alert-success')
+  $('.alert').attr('role', 'alert')
   $('.alert').text(newText)
 }
 
-const onSignUpSuccess = function (data) {
-  const alert = successAlert('Signed up successfully!')
-  // apendding new div to a designated html element
-  $('.alertBox').appendChild(alert)
-  store.user = data.user
+// adding Bootstrap alert box by adding class and role
+const failureAlert = function (newText) {
+  $('.alert').addClass('alert-danger')
+  $('.alert').attr('role', 'alert')
+  $('.alert').text(newText)
+}
+
+const onSignUpSuccess = function () {
+  successAlert('Signed up successfully!')
+  // store.user = data.user
   // console.log(store.user)
   $('#sign-up').trigger('reset')
+  // show the div element that was hidden with onload event
+  $('.alert').show()
 }
 
 const onSignUpFailure = function (event) {
-  const alert = failureAlert('Signed up failed')
-  $('.alertBox').appendChild(alert)
+  failureAlert('Signed up failed')
   $('#sign-up').trigger('reset')
+  $('.alert').show()
 }
 
 const onSignInSuccess = function (data) {
-  const alert = successAlert('Signed in successfully!')
-  $('.alertBox').appendChild(alert)
+  successAlert('Signed in successfully!')
   store.user = data.user
   $('#sign-in').trigger('reset')
+  $('.alert').show()
 }
 
 const onSignInFailure = function (event) {
-  const alert = failureAlert('Signed in failed')
-  $('.alertBox').appendChild(alert)
+  failureAlert('Signed in failed')
   $('#sign-in').trigger('reset')
+  $('.alert').show()
 }
 
 const onChangePasswordSuccess = function (data) {
-  const alert = successAlert('Changed password successfully!')
-  $('.alertBox').appendChild(alert)
+  successAlert('Changed password successfully!')
   $('#change-password').trigger('reset')
+  $('.alert').show()
 }
 
 const onChangePasswordFailure = function (event) {
-  const alert = failureAlert('Changed password failed')
-  $('.alertBox').appendChild(alert)
+  failureAlert('Changed password failed')
   $('#change-password').trigger('reset')
+  $('.alert').show()
 }
 
 const onSignOutSuccess = function () {
-  const alert = successAlert('Signed out successfully!')
-  $('.alertBox').appendChild(alert)
+  successAlert('Signed out successfully!')
+  $('.alert').show()
 }
 
 const onSignOutFailure = function () {
-  const alert = failureAlert('Signed out failed')
-  $('.alertBox').appendChild(alert)
+  failureAlert('Signed out failed')
+  $('.alert').show()
 }
+onSignUpSuccess()
 
 module.exports = {
   onSignUpSuccess,
