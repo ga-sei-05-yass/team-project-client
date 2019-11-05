@@ -6,6 +6,7 @@
 
 html {
   height: 100%;
+  background-color: rgb(205,149,87,0.7);
 }
 
 body {
@@ -50,25 +51,25 @@ video {
 
 .overlay {
   position: absolute;
-  top: 56px;
+  top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: #cd9557;
   opacity: 0.7;
-  z-index: 1;
+  z-index: 0;
 }
 
 .masthead {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   padding-bottom: 3rem;
-  z-index: 2;
+  z-index: 1;
 }
 
 .masthead .masthead-bg {
   position: absolute;
-  top: -4px;
+  top: 0;
   bottom: 0;
   right: 0;
   left: 0;
@@ -216,6 +217,17 @@ video {
   font-weight: 300 !important;
 }
 
+.navbtn {
+  margin-right: 0.5rem;
+}
+
 .navbar {
-  background-color: gray;
+  background-color: none;
+  color: rgba(0, 46, 102);
+  z-index: 2;
+  position: sticky;
+}
+
+.navbar-brand {
+  color: rgba(0, 46, 102);
 }
