@@ -2,23 +2,25 @@
 
 const store = require('../store.js')
 
-// adding Bootstrap alert box by adding class and role
+// Creating Bootstrap alert box by adding class and role to
+// a div `.alert`
 const successAlert = function (newText) {
   $('.alert').addClass('alert-success')
   $('.alert').attr('role', 'alert')
   $('.alert').text(newText)
 }
 
-// adding Bootstrap alert box by adding class and role
+// Creating Bootstrap alert box by adding class and role to
+// a div `.alert`
 const failureAlert = function (newText) {
   $('.alert').addClass('alert-danger')
   $('.alert').attr('role', 'alert')
   $('.alert').text(newText)
 }
 
-const onSignUpSuccess = function () {
+const onSignUpSuccess = function (data) {
   successAlert('Signed up successfully!')
-  // store.user = data.user
+  store.user = data.user
   // console.log(store.user)
   $('#sign-up').trigger('reset')
   // show the div element that was hidden with onload event
@@ -65,7 +67,6 @@ const onSignOutFailure = function () {
   failureAlert('Signed out failed')
   $('.alert').show()
 }
-onSignUpSuccess()
 
 module.exports = {
   onSignUpSuccess,
