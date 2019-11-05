@@ -6,6 +6,5 @@
 // require('./example')
 
 $(() => {
-  // hides ui alert messages
   $('.alert').hide()
 })
