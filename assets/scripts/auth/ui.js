@@ -67,6 +67,7 @@ const onSignOutFailure = function () {
   failureAlert('Signed out failed')
   $('.alert').show()
 }
+onSignUpSuccess()
 
 module.exports = {
   onSignUpSuccess,
