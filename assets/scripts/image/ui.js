@@ -1,6 +1,7 @@
 'use strict'
 
 // const store = require('../store.js')
+const showImagesTemplate = require('../templates/images-listing.handlebars')
 
 const successAlert = function (newText) {
   // `.image-alert` is a div that will contain the alert box for ui messages
@@ -33,7 +34,9 @@ const onNewImageFailure = function (event) {
 const onIndexImageSuccess = function (data) {
   // may NOT need actual success alert if already showing images to user
   // successAlert('Here are all your images!')
-  // handlebars incorporated here
+  // handlebars incorporated here inside a div `.main-content-wrapper`
+  const showImages = showImagesTemplate({ images: data.images })
+  $('.main-content-wrapper').append(showImages)
 }
 
 const onIndexImageFailure = function (data) {

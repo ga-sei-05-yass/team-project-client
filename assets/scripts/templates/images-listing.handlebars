@@ -1,0 +1,12 @@
+<div class="container">
+   {{#each images as |image|}}
+   <!-- in case we need the `image.id` to reference/find -->
+    <!-- <section data-id="{{image.id}}"> -->
+     <div class="d-flex bd-highlight">
+       <div class="p-2 flex-shrink-1 bd-highlight" id="alt-colour">{{image}}</div>
+       <div class="p-2 w-100 bd-highlight alt-colour">{{image.description}}</div>
+     </div>
+   <!-- </section> -->
+   {{/each}}
+   </ul>
+</div>
