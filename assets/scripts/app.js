@@ -5,7 +5,15 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const authEvents = require('./auth/events.js')
+const imageEvents = require('./image/events.js')
+
 $(() => {
   // hides ui alert messages
   $('.alert').hide()
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#update-image').on('submit', imageEvents.onUpdateImage)
 })

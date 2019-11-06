@@ -47,7 +47,10 @@
           <button class="btn btn-secondary navbtn btn-lg" type="button" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
         </li>
         <li class="nav-item active">
-          <button class="btn btn-secondary navbtn btn-lg" type="button">Sign Out</button>
+          <button class="btn btn-secondary navbtn btn-lg" type="button" id="sign-out">Sign Out</button>
+        </li>
+        <li class="nav-item active">
+          <button class="btn btn-secondary navbtn btn-lg" type="button" data-toggle="modal" data-target="#update-image-modal">Update Photo</button>
         </li>
       </ul>
     </div>
@@ -64,8 +67,9 @@
       <div class="row h-100">
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
+            <h1 class="mb-3">BOS.EATS!</h1>
             <!-- <h1 class="mb-3">BOS.EATS</h1> -->
-            <p class="mb-3">Your guide to reminiscing and exploring Boston's eateries.</p>
+            <p class="mb-5">Your guide to reminiscing and exploring Boston's eateries.</p>
             <!-- <p class="mb-5">Developed by General Assembly SEI's Y.A.S.S. Team</p> -->
             <div class="input-group input-group-newsletter">
               <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
@@ -79,7 +83,17 @@
 
   <!-- Main Content -->
   <div class="main-content-wrapper">
-    CONTENT GOES HERE
+    <section class="title-section">
+My Gallery
+    </section>
+
+    <section class="image-section">
+Images Boostrap Goes Here
+    </section>
+
+    <section class="dialogue-section">
+Dialogue box
+    </section>
   </div>
   <!-- Main Content End -->
 
@@ -137,11 +151,32 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id='change-pw'>
+          <form id='change-password'>
             Change Password<br>
             <input type="password" name="passwords[old]" placeholder="Old Password">
             <input type="password" name="passwords[new]" placeholder="New Password">
             <button class="btn btn-primary btn-sm">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="update-image-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Update Image Details Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='update-image'>
+            Change Password<br>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button class="btn btn-primary btn-sm">Update</button>
           </form>
         </div>
       </div>

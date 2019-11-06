@@ -4,16 +4,16 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
  */
 html {
+  background-color: rgb(205, 149, 87, 0.7);
   height: 100%;
-  background-color: rgb(205,149,87,0.7);
 }
 
 body {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
   height: 100%;
   min-height: 35rem;
   position: relative;
-  font-family: 'Source Sans Pro';
-  font-weight: 300;
   top: 3.5rem;
 }
 
@@ -23,14 +23,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 video {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
   position: fixed;
   top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
   transform: translateX(-50%) translateY(-50%);
+  width: auto;
   z-index: 0
 }
 
@@ -46,35 +46,35 @@ video {
 }
 
 .overlay {
+  background-color: #cd9557;
+  height: 100%;
+  left: 0;
+  opacity: 0.7;
   position: absolute;
   top: 0;
-  left: 0;
-  height: 100%;
   width: 100%;
-  background-color: #cd9557;
-  opacity: 0.7;
   z-index: 0
 }
 
 .masthead {
-  position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
+  position: relative;
   z-index: 2
 }
 
 .masthead .masthead-bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  min-height: 35rem;
-  height: 100%;
   background-color: rgba(0, 46, 102, .8);
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  min-height: 35rem;
+  position: absolute;
+  right: 0;
+  top: 0;
   transform: skewY(4deg);
-  transform-origin: bottom right
+  transform-origin: bottom right;
+  width: 100%
 }
 
 .masthead .masthead-content h1 {
@@ -90,17 +90,17 @@ video {
 }
 
 .masthead .masthead-content .input-group-newsletter input {
-  height: auto;
   font-size: 1rem;
+  height: auto;
   padding: 1rem
 }
 
 .masthead .masthead-content .input-group-newsletter button {
   font-size: .8rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 1rem
+  padding: 1rem;
+  text-transform: uppercase
 }
 
 .mb-3, .my-3 {
@@ -116,8 +116,8 @@ video {
   .masthead {
     height: 100%;
     min-height: 0;
-    width: 50%;
-    padding-bottom: 0
+    padding-bottom: 0;
+    width: 50%
   }
 
   .masthead .masthead-bg {
@@ -141,50 +141,85 @@ video {
 }
 
 .main-content-wrapper {
-  position: absolute;
-  margin-bottom: 2rem;
-  width: 100%;
-  height: 85%;
-  z-index: 3;
   background-color: transparent;
-  overflow: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+  height: 85%;
+  margin-bottom: 2rem;
+  overflow: auto;
   padding: 1rem;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main-content-wrapper ul {
   margin-top: 2rem;
-  width: 100%;
-  text-align: center
+  text-align: center;
+  width: 100%
 }
 
 .main-content-wrapper ul>li {
+  display: inline-block;
   margin-left: 1rem;
-  margin-right: 1rem;
-  display: inline-block
+  margin-right: 1rem
 }
 
 .main-content-wrapper ul>li>a {
-  display: block;
-  color: #fff;
   background-color: rgba(0, 46, 102, .8);
   border-radius: 100%;
+  color: #fff;
+  display: block;
   font-size: 2rem;
-  line-height: 4rem;
   height: 4rem;
+  line-height: 4rem;
   width: 4rem
+}
+
+.title-section {
+  background-color: #cd9557;
+  color: white;
+  width: 100%;
+  height: 5%;
+  padding: 0 0.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.image-section {
+  background-color: lightgrey;
+  width: 100%;
+  height: 85%;
+  padding: 0.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dialogue-section {
+  background-color: #cd9557;
+  color: white;
+  width: 100%;
+  height: 5%;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width:1024px) {
   .main-content-wrapper {
+    bottom: 2rem;
+    display: flex;
+    justify-content: center;
     margin: 0;
+    padding: 1rem;
     position: absolute;
     right: 2.5rem;
-    bottom: 2rem;
-    width: 45%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center
+    width: 45%
   }
 
   .main-content-wrapper ul {
@@ -194,9 +229,9 @@ video {
 
   .main-content-wrapper ul>li {
     display: block;
+    margin-bottom: 2rem;
     margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 2rem
+    margin-right: 0
   }
 
   .main-content-wrapper ul>li:last-child {
@@ -204,10 +239,10 @@ video {
   }
 
   .main-content-wrapper ul>li>a {
-    transition: all .2s ease-in-out;
     font-size: 2rem;
-    line-height: 4rem;
     height: 4rem;
+    line-height: 4rem;
+    transition: all .2s ease-in-out;
     width: 4rem
   }
 
@@ -232,31 +267,31 @@ video {
   }
 
   .btn.btn-secondary.navbtn {
-    margin-right: 0.5rem;
     background-color: #cd9557;
-    text-transform: uppercase;
+    border: 0;
     font-size: 0.8rem;
     font-weight: 700;
-    border: 0;
+    margin-right: 0.5rem;
+    text-transform: uppercase;
   }
 }
 
 .mb-1.navbar.navbar-expand-lg {
   background-color: rgba(0, 46, 102);
-  position: fixed;
-  width: 100%;
-  top: 0;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
   z-index: 9998;
 }
 
 .btn.btn-secondary.navbtn {
-  margin-right: 0.5rem;
   background-color: #cd9557;
-  text-transform: uppercase;
+  border: 0;
   font-size: 0.8rem;
   font-weight: 700;
-  border: 0;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
 }
 
 .navbar-brand {
@@ -264,15 +299,16 @@ video {
 }
 
 .nav-brand {
-  font-size: 1.8rem;
   color: white;
+  font-size: 1.8rem;
   margin-bottom: 0;
 }
 
 .navbar {
   background-color: none;
-  color: rgba(0, 46, 102);z-index: 2;
-position: sticky;
+  color: rgba(0, 46, 102);
+  position: sticky;
+  z-index: 2;
 }
 
 .navbar-brand {
