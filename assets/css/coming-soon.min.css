@@ -3,7 +3,6 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-coming-soon/blob/master/LICENSE)
  */
-
 html {
   height: 100%;
   background-color: rgb(205,149,87,0.7);
@@ -17,14 +16,9 @@ body {
   font-weight: 300;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: Merriweather;
-  font-weight: 700;
+  font-weight: 700
 }
 
 video {
@@ -36,16 +30,17 @@ video {
   width: auto;
   height: auto;
   transform: translateX(-50%) translateY(-50%);
-  z-index: 0;
+  z-index: 0
 }
+
 @media (pointer:coarse) and (hover:none) {
   body {
-    background: url("../img/bg-mobile-fallback.jpg") #002e66 no-repeat center center scroll;
-    background-position: cover;
+    background: url(../img/bg-mobile-fallback.jpg) #002e66 no-repeat center center scroll;
+    background-position: cover
   }
 
   body video {
-    display: none;
+    display: none
   }
 }
 
@@ -56,15 +51,24 @@ video {
   height: 100%;
   width: 100%;
   background-color: #cd9557;
+<<<<<<< HEAD
   opacity: 0.7;
   z-index: 0;
+=======
+  opacity: .7;
+  z-index: 1
+>>>>>>> createForms
 }
 
 .masthead {
   position: absolute;
   overflow: hidden;
   padding-bottom: 3rem;
+<<<<<<< HEAD
   z-index: 1;
+=======
+  z-index: 2
+>>>>>>> createForms
 }
 
 .masthead .masthead-bg {
@@ -78,59 +82,65 @@ video {
   height: 100%;
   background-color: rgba(0, 46, 102, .8);
   transform: skewY(4deg);
-  transform-origin: bottom right;
+  transform-origin: bottom right
 }
 
 .masthead .masthead-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.5rem
 }
 
 .masthead .masthead-content p {
-  font-size: 1.2rem;
+  font-size: 1.2rem
 }
 
 .masthead .masthead-content p strong {
-  font-weight: 700;
+  font-weight: 700
 }
 
 .masthead .masthead-content .input-group-newsletter input {
   height: auto;
   font-size: 1rem;
-  padding: 1rem;
+  padding: 1rem
 }
 
 .masthead .masthead-content .input-group-newsletter button {
-  font-size: 0.8rem;
+  font-size: .8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 1rem;
+  padding: 1rem
 }
-@media (min-width:768px) {
+
+.mb-3, .my-3 {
+  margin-bottom: 1rem !important;
+  padding-top: 2rem;
+}
+
+@media (min-width:1024px) {
   .masthead {
     height: 100%;
     min-height: 0;
-    width: 40.5rem;
-    padding-bottom: 0;
+    width: 50%;
+    padding-bottom: 0
   }
 
   .masthead .masthead-bg {
     min-height: 0;
     transform: skewX(-8deg);
-    transform-origin: top right;
+    transform-origin: top right
   }
 
   .masthead .masthead-content {
     padding-left: 3rem;
-    padding-right: 10rem;
+    padding-right: 10rem
   }
 
   .masthead .masthead-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem
   }
 
   .masthead .masthead-content p {
-    font-size: 1.3rem;
+    font-size: 1.3rem
   }
 }
 
@@ -138,22 +148,27 @@ video {
   position: absolute;
   margin-bottom: 2rem;
   width: 100%;
-  z-index: 2;
+  height: 84%;
+  z-index: 3;
+  background-color: transparent;
+  overflow: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem;
 }
 
 .social-icons ul {
   margin-top: 2rem;
   width: 100%;
-  text-align: center;
+  text-align: center
 }
 
-.social-icons ul > li {
+.social-icons ul>li {
   margin-left: 1rem;
   margin-right: 1rem;
-  display: inline-block;
+  display: inline-block
 }
 
-.social-icons ul > li > a {
+.social-icons ul>li>a {
   display: block;
   color: #fff;
   background-color: rgba(0, 46, 102, .8);
@@ -161,60 +176,82 @@ video {
   font-size: 2rem;
   line-height: 4rem;
   height: 4rem;
-  width: 4rem;
+  width: 4rem
 }
-@media (min-width:768px) {
+
+@media (min-width:1024px) {
   .social-icons {
     margin: 0;
     position: absolute;
     right: 2.5rem;
     bottom: 2rem;
-    width: auto;
+    width: 45%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center
   }
 
   .social-icons ul {
     margin-top: 0;
-    width: auto;
+    width: auto
   }
 
-  .social-icons ul > li {
+  .social-icons ul>li {
     display: block;
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
   }
 
-  .social-icons ul > li:last-child {
-    margin-bottom: 0;
+  .social-icons ul>li:last-child {
+    margin-bottom: 0
   }
 
-  .social-icons ul > li > a {
-    transition: all 0.2s ease-in-out;
+  .social-icons ul>li>a {
+    transition: all .2s ease-in-out;
     font-size: 2rem;
     line-height: 4rem;
     height: 4rem;
-    width: 4rem;
+    width: 4rem
   }
 
-  .social-icons ul > li > a:hover {
-    background-color: #002e66;
+  .social-icons ul>li>a:hover {
+    background-color: #002e66
   }
 }
 
-.btn-secondary {
-  background-color: #cd9557;
-  border-color: #cd9557;
+@media (min-width:1024px) {
+  .btn-secondary {
+    background-color: #cd9557;
+    border-color: #cd9557
+  }
+
+  .btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+    background-color: #ba7c37 !important;
+    border-color: #ba7c37 !important;
+  }
+
+  .input {
+    font-weight: 300 !important;
+  }
+
+  .navbtn {
+    margin-right: 0.5rem;
+    background-color: #cd9557;
+  }
 }
 
-.btn-secondary:active,
-.btn-secondary:focus,
-.btn-secondary:hover {
-  background-color: #ba7c37 !important;
-  border-color: #ba7c37 !important;
+nav.mb-1.navbar.navbar-expand-lg {
+  background-color: rgba(0, 46, 102);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9998;
 }
 
-.input {
-  font-weight: 300 !important;
+.navbar-brand {
+  color: white;
 }
 
 .navbtn {
