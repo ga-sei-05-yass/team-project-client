@@ -15,6 +15,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  $('#new-image').on('submit', imageEvents.onNewImage)
+  $('#upload-form').on('submit', imageEvents.onNewImage)
   $('#update-image').on('submit', imageEvents.onUpdateImage)
+  $('#public-gallery').on('click', imageEvents.onIndexImage)
 })

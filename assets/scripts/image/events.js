@@ -7,10 +7,11 @@ const ui = require('./ui')
 const onNewImage = function (event) {
   event.preventDefault()
 
-  const form = event.target
-  const formData = getFormFields(form)
-  api.newImage(formData)
-  // console.log(formData)
+  // const form = event.target
+  // const formData = getFormFields(form)
+  const data = new FormData(this)
+  console.log(...data)
+  api.newImage(data)
     .then(ui.onNewImageSuccess)
     .catch(ui.onNewImageFailure)
 }

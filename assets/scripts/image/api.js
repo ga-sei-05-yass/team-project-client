@@ -5,16 +5,18 @@ const config = require('../config')
 const store = require('../store')
 
 // create new image
-const newImage = function (formData) {
+const newImage = function (data) {
   // console.log(store.user.token)
   // console.log('formData is', formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/images',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      'Authorization': `Bearer ${store.user.token}`
     },
-    data: formData
+    data,
+    processData: false,
+    contentType: false
   })
 }
 
@@ -24,7 +26,7 @@ const indexImage = function () {
     method: 'GET',
     url: config.apiUrl + '/images',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      'Authorization': `Bearer ${store.user.token}`
     }
   })
 }

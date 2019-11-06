@@ -1,6 +1,6 @@
 'use strict'
 
-// const store = require('../store.js')
+const store = require('../store.js')
 const showImagesTemplate = require('../templates/images-listing.handlebars')
 
 const successAlert = function (newText) {
@@ -21,10 +21,10 @@ const onNewImageSuccess = function (data) {
   // Display new image AND/OR show success alert
   // successAlert('New image uploaded successfully!')
   // Also update both galleries simultaneously
-  // store.image = data.image
-  // console.log(store.image)
+  store.image = data.image
+  console.log(store.image)
   // clear form once upload is successful
-  // $('<form-element>').trigger('reset')
+  $('#upload-form').trigger('reset')
 }
 
 const onNewImageFailure = function (event) {
@@ -32,11 +32,13 @@ const onNewImageFailure = function (event) {
 }
 
 const onIndexImageSuccess = function (data) {
+  console.log(data)
   // may NOT need actual success alert if already showing images to user
   // successAlert('Here are all your images!')
   // handlebars incorporated here inside a div `#main-content-wrapper`
   const showImages = showImagesTemplate({ images: data.images })
-  $('#main-content-wrapper').append(showImages)
+  $('.image-section').text('')
+  $('.image-section').append(showImages)
 }
 
 const onIndexImageFailure = function (data) {
