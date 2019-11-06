@@ -32,11 +32,11 @@
   <!-- Navbar -->
   <nav class="mb-1 navbar navbar-expand-lg">
     <h1 class="nav-brand">BOS.EATS</h1>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav ml-auto" id="navigation-bar" style="display:none">
         <li class="nav-item active">
           <button class="btn btn-secondary navbtn btn-lg" type="button">Private Gallery</button>
         </li>
@@ -66,7 +66,7 @@
     <div class="container h-100">
       <div class="row h-100">
         <div class="col-12 my-auto">
-          <div class="masthead-content text-white py-5 py-md-0">
+          <div id="landing-page" class="masthead-content text-white py-5 py-md-0">
             <h1 class="mb-3">BOS.EATS!</h1>
             <!-- <h1 class="mb-3">BOS.EATS</h1> -->
             <p class="mb-5">Your guide to reminiscing and exploring Boston's eateries.</p>
@@ -76,6 +76,23 @@
               <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
             </div>
           </div>
+
+          <div id="main-page" class="masthead-content text-white py-5 py-md-0" style="display: none">
+            <h1 class="mb-3">Welcome!</h1>
+            <!-- <h1 class="mb-3">BOS.EATS</h1> -->
+            <p class="mb-5">Upload a photo below.</p>
+            <!-- <p class="mb-5">Developed by General Assembly SEI's Y.A.S.S. Team</p> -->
+            <div class="input-group input-group-newsletter">
+
+              <form id="upload-form" enctype="multipart/form-data" id="new-image">
+                <input type="file" class="btn btn-secondary btn-lg btn-block" name="file">
+                <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Upload Photo">
+              </form>
+
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -85,17 +102,17 @@
   <div class="alert"></div>
 
   <!-- Main Content -->
-  <div class="main-content-wrapper">
+  <div id="main-content-wrapper" style="display: none">
     <section class="title-section">
-My Gallery
+      My Gallery
     </section>
 
     <section class="image-section">
-Images Boostrap Goes Here
+      Images Boostrap Goes Here
     </section>
 
     <section class="dialogue-section">
-Dialogue box
+      Dialogue box
     </section>
   </div>
   <!-- Main Content End -->
@@ -176,9 +193,9 @@ Dialogue box
         </div>
         <div class="modal-body">
           <form id='update-image'>
-            Change Password<br>
-            <input type="password" name="passwords[old]" placeholder="Old Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
+            Update image details<br>
+            <input type="text" name="image[description]" placeholder="Edit Description">
+            <input type="text" name="image[tag]" placeholder="Edit Tag">
             <button class="btn btn-primary btn-sm">Update</button>
           </form>
         </div>
