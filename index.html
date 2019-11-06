@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>BOS.EATS</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -31,23 +31,23 @@
 
   <!-- Navbar -->
   <nav class="mb-1 navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <h1 class="nav-brand">BOS.EATS</h1>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <button class="btn btn-secondary navbtn" type="button">My Photos</button>
+          <button class="btn btn-secondary navbtn btn-lg" type="button">Private Gallery</button>
         </li>
         <li class="nav-item active">
-          <button class="btn btn-secondary navbtn" type="button">All Photos</button>
+          <button class="btn btn-secondary navbtn btn-lg" type="button">Public Gallery</button>
         </li>
         <li class="nav-item active">
-          <button class="btn btn-secondary navbtn" type="button">Change Password</button>
+          <button class="btn btn-secondary navbtn btn-lg" type="button" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
         </li>
         <li class="nav-item active">
-          <button class="btn btn-secondary navbtn" type="button">Sign Out</button>
+          <button class="btn btn-secondary navbtn btn-lg" type="button">Sign Out</button>
         </li>
       </ul>
     </div>
@@ -56,9 +56,6 @@
 
   <!-- Overlay -->
   <div class="overlay"></div>
-  <!-- <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"> -->
-  <!-- <source src="mp4/bg.mp4" type="video/mp4"> -->
-  </video>
   <!-- End Overlay -->
 
   <div class="masthead">
@@ -67,12 +64,12 @@
       <div class="row h-100">
         <div class="col-12 my-auto">
           <div class="masthead-content text-white py-5 py-md-0">
-            <h1 class="mb-3">BOS.EATS</h1>
-            <p class="mb-5">Your guide to to exploring Boston's eateries.</p>
+            <!-- <h1 class="mb-3">BOS.EATS</h1> -->
+            <p class="mb-3">Your guide to reminiscing and exploring Boston's eateries.</p>
             <!-- <p class="mb-5">Developed by General Assembly SEI's Y.A.S.S. Team</p> -->
             <div class="input-group input-group-newsletter">
-              <button class="btn btn-secondary btn-lg btn-block" type="button">Sign In</button>
-              <button class="btn btn-secondary btn-lg btn-block" type="button">Sign Up</button>
+              <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+              <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
             </div>
           </div>
         </div>
@@ -80,11 +77,77 @@
     </div>
   </div>
 
-<!-- Main Content -->
-<div class="social-icons">
-  CONTENT GOES HERE
-</div>
-<!-- Main Content End -->
+  <!-- Main Content -->
+  <div class="main-content-wrapper">
+    CONTENT GOES HERE
+  </div>
+  <!-- Main Content End -->
+
+  <!-- Modals -->
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Sign Up Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-up'>
+            Sign Up<br>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button class="btn btn-primary btn-sm">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Sign In Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-in'>
+            Sign In<br>
+            <input type="email" class="sign-in-modal" name="credentials[email]" placeholder="Enter Email">
+            <input type="password" name="credentials[password]" placeholder="Enter Password">
+            <button class="btn btn-primary btn-sm">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Change Password Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='change-pw'>
+            Change Password<br>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button class="btn btn-primary btn-sm">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modals -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

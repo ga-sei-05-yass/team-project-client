@@ -14,6 +14,7 @@ body {
   position: relative;
   font-family: 'Source Sans Pro';
   font-weight: 300;
+  top: 3.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,24 +52,15 @@ video {
   height: 100%;
   width: 100%;
   background-color: #cd9557;
-<<<<<<< HEAD
   opacity: 0.7;
-  z-index: 0;
-=======
-  opacity: .7;
-  z-index: 1
->>>>>>> createForms
+  z-index: 0
 }
 
 .masthead {
-  position: absolute;
+  position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
-<<<<<<< HEAD
-  z-index: 1;
-=======
   z-index: 2
->>>>>>> createForms
 }
 
 .masthead .masthead-bg {
@@ -117,6 +109,10 @@ video {
 }
 
 @media (min-width:1024px) {
+  body {
+    top: 0;
+  }
+
   .masthead {
     height: 100%;
     min-height: 0;
@@ -144,11 +140,11 @@ video {
   }
 }
 
-.social-icons {
+.main-content-wrapper {
   position: absolute;
   margin-bottom: 2rem;
   width: 100%;
-  height: 84%;
+  height: 85%;
   z-index: 3;
   background-color: transparent;
   overflow: auto;
@@ -156,19 +152,19 @@ video {
   padding: 1rem;
 }
 
-.social-icons ul {
+.main-content-wrapper ul {
   margin-top: 2rem;
   width: 100%;
   text-align: center
 }
 
-.social-icons ul>li {
+.main-content-wrapper ul>li {
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block
 }
 
-.social-icons ul>li>a {
+.main-content-wrapper ul>li>a {
   display: block;
   color: #fff;
   background-color: rgba(0, 46, 102, .8);
@@ -180,7 +176,7 @@ video {
 }
 
 @media (min-width:1024px) {
-  .social-icons {
+  .main-content-wrapper {
     margin: 0;
     position: absolute;
     right: 2.5rem;
@@ -191,23 +187,23 @@ video {
     justify-content: center
   }
 
-  .social-icons ul {
+  .main-content-wrapper ul {
     margin-top: 0;
     width: auto
   }
 
-  .social-icons ul>li {
+  .main-content-wrapper ul>li {
     display: block;
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 2rem
   }
 
-  .social-icons ul>li:last-child {
+  .main-content-wrapper ul>li:last-child {
     margin-bottom: 0
   }
 
-  .social-icons ul>li>a {
+  .main-content-wrapper ul>li>a {
     transition: all .2s ease-in-out;
     font-size: 2rem;
     line-height: 4rem;
@@ -215,7 +211,7 @@ video {
     width: 4rem
   }
 
-  .social-icons ul>li>a:hover {
+  .main-content-wrapper ul>li>a:hover {
     background-color: #002e66
   }
 }
@@ -235,13 +231,17 @@ video {
     font-weight: 300 !important;
   }
 
-  .navbtn {
+  .btn.btn-secondary.navbtn {
     margin-right: 0.5rem;
     background-color: #cd9557;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 0;
   }
 }
 
-nav.mb-1.navbar.navbar-expand-lg {
+.mb-1.navbar.navbar-expand-lg {
   background-color: rgba(0, 46, 102);
   position: fixed;
   width: 100%;
@@ -250,19 +250,29 @@ nav.mb-1.navbar.navbar-expand-lg {
   z-index: 9998;
 }
 
+.btn.btn-secondary.navbtn {
+  margin-right: 0.5rem;
+  background-color: #cd9557;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 0;
+}
+
 .navbar-brand {
   color: white;
 }
 
-.navbtn {
-  margin-right: 0.5rem;
+.nav-brand {
+  font-size: 1.8rem;
+  color: white;
+  margin-bottom: 0;
 }
 
 .navbar {
   background-color: none;
-  color: rgba(0, 46, 102);
-  z-index: 2;
-  position: sticky;
+  color: rgba(0, 46, 102);z-index: 2;
+position: sticky;
 }
 
 .navbar-brand {
