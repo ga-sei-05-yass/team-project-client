@@ -85,7 +85,9 @@
             <div class="input-group input-group-newsletter">
 
               <form id="upload-form" enctype="multipart/form-data">
-                <input type="file" class="btn btn-secondary btn-lg btn-block" name="file">
+                <input type="file" class="form-control mb-4 alt-color" name="file">
+                <input type="text" name="tag" class="form-control mb-4" placeholder="Tag">
+                <input type="text" name="description" class="form-control mb-4" placeholder="Description">
                 <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Upload Photo">
               </form>
 
@@ -200,6 +202,24 @@
       </div>
     </div>
   </div>
+
+  <!-- Update Modal -->
+  <div class="modal fade" id="update-image-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Update Image Details Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="update-modal-body">
+          <!-- Update content goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Update Modal end -->
   <!-- End Modals -->
 
   <!-- Bootstrap core JavaScript -->
