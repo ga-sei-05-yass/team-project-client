@@ -7,7 +7,6 @@ const store = require('../store.js')
 const successAlert = function (newText) {
   $('.alert').removeClass('alert-danger')
   $('.alert').addClass('alert-success')
-  $('.alert').attr('role', 'alert')
   $('.alert').text(newText)
 }
 
@@ -16,7 +15,6 @@ const successAlert = function (newText) {
 const failureAlert = function (newText) {
   $('.alert').removeClass('alert-success')
   $('.alert').addClass('alert-danger')
-  $('.alert').attr('role', 'alert')
   $('.alert').text(newText)
 }
 
