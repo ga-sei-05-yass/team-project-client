@@ -20,8 +20,16 @@ const newImage = function (data) {
   })
 }
 
-// show ALL images
+// show ALL images from ALL users
 const indexImage = function () {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/images'
+  })
+}
+
+// show ALL images from ONE user
+const indexImagePrivate = function () {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/images',
@@ -67,6 +75,7 @@ const deleteImage = function (id) {
 module.exports = {
   newImage,
   indexImage,
+  indexImagePrivate,
   getImage,
   updateImage,
   deleteImage

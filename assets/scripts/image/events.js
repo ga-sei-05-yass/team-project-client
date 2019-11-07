@@ -18,10 +18,18 @@ const onNewImage = function(event) {
 }
 
 const onIndexImage = function(event) {
+  console.log(event.target)
   event.preventDefault()
   api.indexImage()
     .then(ui.onIndexImageSuccess)
     .catch(ui.onIndexImageFailure)
+}
+
+const onIndexImagePrivate = function(event) {
+  event.preventDefault()
+  api.indexImagePrivate()
+    .then(ui.onIndexImagePrivateSuccess)
+    .catch(ui.onIndexImagePrivateFailure)
 }
 
 // const onGetImage = function(event) {
@@ -80,6 +88,7 @@ const onDeleteImage = function(event) {
 module.exports = {
   onNewImage,
   onIndexImage,
+  onIndexImagePrivate,
   // onGetImage,
   onUpdateImage,
   onDeleteImage,

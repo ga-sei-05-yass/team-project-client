@@ -5,18 +5,6 @@
     <!-- <div class="d-flex bd-highlight"> -->
     <div class="p-2 flex-shrink-1 bd-highlight">
       <p><img src="{{image.fileUrl}}" width="100%"></p>
-      <p>
-        <form class="delete-image">
-          <input type="submit" class="btn btn-secondary btn-sm" value="Delete This Image">
-          <input type="hidden" name="id" value="{{image.id}}">
-        </form>
-
-        <form class="update-image">
-          <!-- <input type="submit" class="btn btn-secondary btn-sm" value="Update This Image"> -->
-          <input class="btn btn-secondary navbtn" type="submit" value="Update This Image" data-toggle="modal" data-target="#update-image-modal">
-        </form>
-
-      </p>
       <p>Tag: {{image.tag}}</p>
       <p>Description: {{image.description}}</p>
     </div>
