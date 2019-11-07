@@ -7,8 +7,8 @@ to any users. Users are only able to update and delete their own images, however
 For scalability, the application is not limited to only Boston but can be used in any
 city around the world.
 
-   [Click here to see our deployed site]()
-   [Back-end repository](https://github.com/ga-sei-05-yass/team-project-api)[/ deployed site]()
+[Click here to see our deployed site]()   
+[Back-end repository](https://github.com/ga-sei-05-yass/team-project-api)[/ deployed site]()
 
 
 
