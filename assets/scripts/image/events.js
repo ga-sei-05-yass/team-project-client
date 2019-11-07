@@ -66,7 +66,6 @@ const onFillUpdateModal = function(event) {
 const onUpdateImage = function(event) {
   event.preventDefault()
   const form = event.target
-  console.log(event.target)
   const formData = getFormFields(form)
   console.log(formData)
   api.updateImage(formData)
@@ -80,10 +79,10 @@ const onDeleteImage = function(event) {
   const form = event.target
   console.log(event.target)
   const formData = getFormFields(form)
-  console.log(formData)
-  api.deleteImage(formData)
-  //   .then(ui.onDeleteImageSuccess)
-  //   .catch(ui.onDeleteImageFailure)
+  console.log(formData.id)
+  api.deleteImage(formData.id)
+    // .then(ui.onDeleteImageSuccess)
+    // .catch(ui.onDeleteImageFailure)
 }
 
 module.exports = {
