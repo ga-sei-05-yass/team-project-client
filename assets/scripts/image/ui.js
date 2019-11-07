@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const showImagesTemplate = require('../templates/images-listing.handlebars')
+const showModalTemplate = require('../templates/update.handlebars')
 
 const successAlert = function (newText) {
   // `.image-alert` is a div that will contain the alert box for ui messages
@@ -45,6 +46,14 @@ const onIndexImageFailure = function (data) {
   failureAlert('Unable to retrieve images')
 }
 
+const onFillUpdateModalSuccess = function (data) {
+  console.log("this worked")
+  const fillModal = showModalTemplate({ images: data.images })
+  // console.log(fillModal)
+  $('.update-modal-body').text('')
+  $('.update-modal-body').append(fillModal)
+}
+
 const onGetImageSuccess = function (responseData) {
   // console.log(responseData)
   // needs to display all images
@@ -55,7 +64,8 @@ const onGetImageFailure = function () {
 }
 
 const onUpdateImageSuccess = function (responseData) {
-  successAlert('Updated successfully!')
+  console.log('it reached here at least')
+  // successAlert('Updated successfully!')
   // display the updated image/details
   // and also update the galleries simultaneously
   // clear form once update is successful
@@ -84,5 +94,6 @@ module.exports = {
   onUpdateImageSuccess,
   onUpdateImageFailure,
   onDeleteImageSuccess,
-  onDeleteImageFailure
+  onDeleteImageFailure,
+  onFillUpdateModalSuccess
 }

@@ -18,4 +18,7 @@ $(() => {
   $('#upload-form').on('submit', imageEvents.onNewImage)
   $('#update-image').on('submit', imageEvents.onUpdateImage)
   $('#public-gallery').on('click', imageEvents.onIndexImage)
+  $('.image-section').on('submit', '.delete-image', imageEvents.onDeleteImage)
+  $('.image-section').on('submit', '.update-image', imageEvents.onFillUpdateModal)
+  $('.update-modal-body').on('submit', '.update-image-form', imageEvents.onUpdateImage)
 })

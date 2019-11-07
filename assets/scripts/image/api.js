@@ -32,10 +32,10 @@ const indexImage = function () {
 }
 
 // get one image
-const getImage = function (formData) {
+const getImage = function (id) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/images/' + formData.image.id,
+    url: config.apiUrl + '/images/' + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -54,10 +54,10 @@ const updateImage = function (formData) {
   })
 }
 
-const deleteImage = function (formData) {
+const deleteImage = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/images/' + formData.image.id,
+    url: config.apiUrl + '/images/' + id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
