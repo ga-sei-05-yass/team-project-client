@@ -2,6 +2,7 @@
 
 const store = require('../store.js')
 const showImagesTemplate = require('../templates/images-listing.handlebars')
+const showImagesPrivateTemplate = require('../templates/images-listing-private.handlebars')
 const showModalTemplate = require('../templates/update.handlebars')
 
 const successAlert = function (newText) {
@@ -44,6 +45,17 @@ const onIndexImageSuccess = function (data) {
 
 const onIndexImageFailure = function (data) {
   failureAlert('Unable to retrieve images')
+}
+
+const onIndexImagePrivateSuccess = function (data) {
+  console.log(data)
+  const privateImages = data.images.filter(function (image) {
+    return image.owner === store.user._id
+  })
+  console.log(privateImages)
+  const showImages = showImagesPrivateTemplate({ images: privateImages })
+  $('.image-section').text('')
+  $('.image-section').append(showImages)
 }
 
 const onFillUpdateModalSuccess = function (data) {
@@ -89,6 +101,7 @@ module.exports = {
   onNewImageFailure,
   onIndexImageSuccess,
   onIndexImageFailure,
+  onIndexImagePrivateSuccess,
   onGetImageSuccess,
   onGetImageFailure,
   onUpdateImageSuccess,
