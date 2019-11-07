@@ -81,7 +81,7 @@ const onDeleteImage = function(event) {
   const formData = getFormFields(form)
   console.log(formData.id)
   api.deleteImage(formData.id)
-    // .then(ui.onDeleteImageSuccess)
+    .then(ui.onDeleteImageSuccess)
     // .catch(ui.onDeleteImageFailure)
 }
 
