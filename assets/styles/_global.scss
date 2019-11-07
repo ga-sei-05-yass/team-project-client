@@ -1,4 +1,5 @@
 // Global styling for this theme
+@import '~bootstrap/scss/bootstrap';
 
 html {
   height: 100%;
@@ -44,7 +45,7 @@ video {
 
 .overlay {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   height: 100%;
   width: 100%;
