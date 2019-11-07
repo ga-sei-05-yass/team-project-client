@@ -50,7 +50,7 @@ const updateImage = function (formData) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData
+    data: formData.image
   })
 }
 

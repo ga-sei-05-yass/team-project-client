@@ -3,6 +3,7 @@
 const store = require('../store.js')
 const showImagesTemplate = require('../templates/images-listing.handlebars')
 const showModalTemplate = require('../templates/update.handlebars')
+const imageEvents = require('./events.js')
 
 const successAlert = function (newText) {
   // `.image-alert` is a div that will contain the alert box for ui messages
@@ -48,8 +49,9 @@ const onIndexImageFailure = function (data) {
 
 const onFillUpdateModalSuccess = function (data) {
   console.log("this worked")
+  console.log(data)
   const fillModal = showModalTemplate({ images: data.images })
-  // console.log(fillModal)
+  console.log(fillModal)
   $('.update-modal-body').text('')
   $('.update-modal-body').append(fillModal)
 }
@@ -78,6 +80,7 @@ const onUpdateImageFailure = function () {
 
 const onDeleteImageSuccess = function (responseData) {
   successAlert('Image deleted!')
+  imageEvents.onIndexImage()
 }
 
 const onDeleteImageFailure = function () {
