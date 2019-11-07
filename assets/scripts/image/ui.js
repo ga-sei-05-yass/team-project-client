@@ -42,6 +42,8 @@ const onIndexImageSuccess = function (data) {
   const showImages = showImagesTemplate({ images: data.images })
   $('.image-section').text('')
   $('.image-section').append(showImages)
+  $('.title-section').text('')
+  $('.title-section').text('Public Gallery')
 }
 
 const onIndexImageFailure = function (data) {
@@ -57,13 +59,16 @@ const onIndexImagePrivateSuccess = function (data) {
   const showImages = showImagesPrivateTemplate({ images: privateImages })
   $('.image-section').text('')
   $('.image-section').append(showImages)
+  $('.title-section').text('')
+  $('.title-section').text('My Gallery')
 }
 
 const onFillUpdateModalSuccess = function (data) {
-  console.log("this worked")
-  console.log(data)
-  const fillModal = showModalTemplate({ images: data.images })
-  console.log(fillModal)
+  const privateImages = data.images.filter(function (image) {
+    return image.owner === store.user._id
+  })
+  const fillModal = showModalTemplate({ images: privateImages })
+  // const fillModal = showModalTemplate({ images: data.images })
   $('.update-modal-body').text('')
   $('.update-modal-body').append(fillModal)
 }
@@ -78,7 +83,7 @@ const onGetImageFailure = function () {
 }
 
 const onUpdateImageSuccess = function (responseData) {
-  console.log('it reached here at least')
+  onIndexImagePrivateSuccess(responseData)
   // successAlert('Updated successfully!')
   // display the updated image/details
   // and also update the galleries simultaneously
