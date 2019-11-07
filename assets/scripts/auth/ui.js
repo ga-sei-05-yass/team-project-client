@@ -22,9 +22,6 @@ const failureAlert = function (newText) {
 
 const alert = function () {
   $('.alert').show()
-  window.setTimeout($('.alert').fadeTo(5000, 0).slideUp(5000, function () {
-    $(this).remove()
-  }), 2000)
 }
 
 const modalToggleFix = function () {
