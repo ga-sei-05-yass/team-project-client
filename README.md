@@ -46,5 +46,10 @@ integrated the use of Bootstrap, Handlebars, and Jquery as well.
 2. Upon sign-in, upload, update, and delete, we'd like to have the gallery simultaneously refreshes the content.
 3. Currently, photos have a property for "tag." In future iteration, we'd like to have a search function for different tags.
 
+### Wireframes:
+![img_9526](https://media.git.generalassemb.ly/user/23009/files/6f6b2600-ffb4-11e9-912b-7effccd94ad3)
+![img_7999](https://media.git.generalassemb.ly/user/23009/files/71cd8000-ffb4-11e9-8fca-0eada1ea3399)
+
+
 ### ERD
 ![ERD](public/ERD.PNG)
