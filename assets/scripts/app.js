@@ -13,6 +13,7 @@ $(() => {
   // $('.alert').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  // $('#sign-in').on('click', imageEvents.onIndexImagePrivate)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#upload-form').on('submit', imageEvents.onNewImage)

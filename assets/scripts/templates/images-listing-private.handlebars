@@ -2,7 +2,7 @@
   <form class="update-image">
     <!-- <input type="submit" class="btn btn-secondary btn-sm" value="Update This Image"> -->
     <input type="hidden" name="id" value="{{image.id}}">
-    <input class="btn btn-secondary navbtn" type="submit" value="Update My Images" data-toggle="modal" data-target="#update-image-modal">
+    <input class="btn btn-secondary navbtn btn-lg btn-block" type="submit" value="Update My Images" data-toggle="modal" data-target="#update-image-modal">
   </form>
   {{#each images as |image|}}
     <!-- in case we need the `image.id` to reference/find -->
@@ -12,7 +12,7 @@
       <p><img src="{{image.fileUrl}}" width="100%"></p>
       <p>
         <form class="delete-image">
-          <input type="submit" class="btn btn-secondary btn-sm" value="Delete This Image">
+          <input type="submit" class="btn btn-secondary btn-sm btn-block" value="Delete This Image">
           <input type="hidden" name="id" value="{{image.id}}">
         </form>
 

@@ -6,18 +6,30 @@ const showImagesPrivateTemplate = require('../templates/images-listing-private.h
 const showModalTemplate = require('../templates/update.handlebars')
 const imageEvents = require('./events.js')
 
-const successAlert = function (newText) {
-  // `.image-alert` is a div that will contain the alert box for ui messages
-  // Still need to determine placement of div
-  $('.image-alert').addClass('alert-success')
-  $('.image-alert').attr('role', 'alert')
-  $('.image-alert').text(newText)
+// Creating Bootstrap alert box by adding class and role to
+// a div `.alert`
+const successAlert = function(newText) {
+  $('.alert').addClass('alert-success')
+  $('.alert').text(newText)
+  $('.alert').removeAttr('hidden')
+  setTimeout(() => {
+    $('.alert').removeClass('alert-success')
+    $('.alert').text('')
+    // $('.alert').attr('hidden')
+  }, 1800)
 }
 
-const failureAlert = function (newText) {
-  $('.image-alert').addClass('alert-danger')
-  $('.image-alert').attr('role', 'alert')
-  $('.image-alert').text(newText)
+// Creating Bootstrap alert box by adding class and role to
+// a div `.alert`
+const failureAlert = function(newText) {
+  $('.alert').addClass('alert-danger')
+  $('.alert').text(newText)
+  $('.alert').removeAttr('hidden')
+  setTimeout(() => {
+    $('.alert').removeClass('alert-danger')
+    $('.alert').text('')
+    // $('.alert').attr('hidden')
+  }, 1800)
 }
 
 const onNewImageSuccess = function (data) {
@@ -83,8 +95,10 @@ const onGetImageFailure = function () {
 }
 
 const onUpdateImageSuccess = function (responseData) {
-  onIndexImagePrivateSuccess(responseData)
-  // successAlert('Updated successfully!')
+  successAlert('Updated successfully!')
+  $('#update-image-modal').modal('toggle')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   // display the updated image/details
   // and also update the galleries simultaneously
   // clear form once update is successful
@@ -97,7 +111,7 @@ const onUpdateImageFailure = function () {
 
 const onDeleteImageSuccess = function (responseData) {
   successAlert('Image deleted!')
-  imageEvents.onIndexImage()
+  imageEvents.onIndexImage(responseData)
 }
 
 const onDeleteImageFailure = function () {

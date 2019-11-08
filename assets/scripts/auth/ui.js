@@ -1,33 +1,44 @@
 'use strict'
 
 const store = require('../store.js')
+const imageEvents = require('../image/events.js')
 
 // Creating Bootstrap alert box by adding class and role to
 // a div `.alert`
-const successAlert = function (newText) {
-  $('.alert').removeClass('alert-danger')
+const successAlert = function(newText) {
   $('.alert').addClass('alert-success')
   $('.alert').text(newText)
+  $('.alert').removeAttr('hidden')
+  setTimeout(() => {
+    $('.alert').removeClass('alert-success')
+    $('.alert').text('')
+    $('.alert').attr('hidden')
+  }, 1800)
 }
 
 // Creating Bootstrap alert box by adding class and role to
 // a div `.alert`
-const failureAlert = function (newText) {
-  $('.alert').removeClass('alert-success')
+const failureAlert = function(newText) {
   $('.alert').addClass('alert-danger')
   $('.alert').text(newText)
+  $('.alert').removeAttr('hidden')
+  setTimeout(() => {
+    $('.alert').removeClass('alert-danger')
+    $('.alert').text('')
+    $('.alert').attr('hidden')
+  }, 1800)
 }
 
-const alert = function () {
+const alert = function() {
   $('.alert').show()
 }
 
-const modalToggleFix = function () {
+const modalToggleFix = function() {
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
 }
 
-const onSignUpSuccess = function (data) {
+const onSignUpSuccess = function(data) {
   successAlert('Signed up successfully!')
   store.user = data.user
   // console.log(store.user)
@@ -38,7 +49,7 @@ const onSignUpSuccess = function (data) {
   modalToggleFix()
 }
 
-const onSignUpFailure = function (event) {
+const onSignUpFailure = function(event) {
   failureAlert('Signed up failed')
   $('#sign-up').trigger('reset')
   alert()
@@ -46,7 +57,7 @@ const onSignUpFailure = function (event) {
   modalToggleFix()
 }
 
-const onSignInSuccess = function (data) {
+const onSignInSuccess = function(data) {
   successAlert('Signed in successfully!')
   store.user = data.user
   $('#sign-in').trigger('reset')
@@ -59,7 +70,7 @@ const onSignInSuccess = function (data) {
   $('#navigation-bar').show()
 }
 
-const onSignInFailure = function (event) {
+const onSignInFailure = function(event) {
   failureAlert('Signed in failed')
   $('#sign-in').trigger('reset')
   alert()
@@ -67,7 +78,7 @@ const onSignInFailure = function (event) {
   modalToggleFix()
 }
 
-const onChangePasswordSuccess = function (data) {
+const onChangePasswordSuccess = function(data) {
   successAlert('Changed password successfully!')
   $('#change-password').trigger('reset')
   alert()
@@ -75,7 +86,7 @@ const onChangePasswordSuccess = function (data) {
   modalToggleFix()
 }
 
-const onChangePasswordFailure = function (event) {
+const onChangePasswordFailure = function(event) {
   failureAlert('Changed password failed')
   $('#change-password').trigger('reset')
   alert()
@@ -83,7 +94,7 @@ const onChangePasswordFailure = function (event) {
   modalToggleFix()
 }
 
-const onSignOutSuccess = function () {
+const onSignOutSuccess = function() {
   // may not need this alert if we go back to landing page
   successAlert('Signed out successfully!')
   alert()
@@ -93,7 +104,7 @@ const onSignOutSuccess = function () {
   $('#navigation-bar').hide()
 }
 
-const onSignOutFailure = function () {
+const onSignOutFailure = function() {
   failureAlert('Signed out failed')
   alert()
 }
