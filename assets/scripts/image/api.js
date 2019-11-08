@@ -6,8 +6,6 @@ const store = require('../store')
 
 // create new image
 const newImage = function (data) {
-  // console.log(store.user.token)
-  // console.log('formData is', formData)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/images',
