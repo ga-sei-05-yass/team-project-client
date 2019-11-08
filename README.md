@@ -7,10 +7,8 @@ to any users. Users are only able to update and delete their own images, however
 For scalability, the application is not limited to only Boston but can be used in any
 city around the world.
 
-[Click here to see our deployed site]()   
-[Back-end repository](https://github.com/ga-sei-05-yass/team-project-api)[/ deployed site]()
-
-
+   [Click here to see our deployed site](https://ga-sei-05-yass.github.io/team-project-client/)  
+   [Back-end repository](https://github.com/ga-sei-05-yass/team-project-api)[/ deployed site](https://arcane-temple-01908.herokuapp.com/)
 
 
 ### Planning and Process
@@ -41,6 +39,12 @@ integrated the use of Bootstrap, Handlebars, and Jquery as well.
 8. AS a signed-in user, I would like to be able to see the details (name, description, timestamps, & tag) of individual image.
 9. As a signed-in user, I would like to be able to to update the details of _only_ my image.
 10. As a signed-in user, I would like to be able to delete my _own_ image from the database and no one else's.
+
+### Unsolved Problems
+
+1. For updating images, we'd like to have a customized modal for each individual image.
+2. Upon sign-in, upload, update, and delete, we'd like to have the gallery simultaneously refreshes the content.
+3. Currently, photos have a property for "tag." In future iteration, we'd like to have a search function for different tags.
 
 ### ERD
 ![ERD](public/ERD.PNG)
