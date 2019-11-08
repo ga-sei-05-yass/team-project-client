@@ -4,11 +4,11 @@ const store = require('../store.js')
 const showImagesTemplate = require('../templates/images-listing.handlebars')
 const showImagesPrivateTemplate = require('../templates/images-listing-private.handlebars')
 const showModalTemplate = require('../templates/update.handlebars')
-const imageEvents = require('./events.js')
+// const imageEvents = require('./events.js')
 
 // Creating Bootstrap alert box by adding class and role to
 // a div `.alert`
-const successAlert = function(newText) {
+const successAlert = function (newText) {
   $('.alert').addClass('alert-success')
   $('.alert').text(newText)
   $('.alert').removeAttr('hidden')
@@ -21,7 +21,7 @@ const successAlert = function(newText) {
 
 // Creating Bootstrap alert box by adding class and role to
 // a div `.alert`
-const failureAlert = function(newText) {
+const failureAlert = function (newText) {
   $('.alert').addClass('alert-danger')
   $('.alert').text(newText)
   $('.alert').removeAttr('hidden')
@@ -34,22 +34,20 @@ const failureAlert = function(newText) {
 
 const onNewImageSuccess = function (data) {
   // Display new image AND/OR show success alert
-  // successAlert('New image uploaded successfully!')
+  successAlert('Restaurant uploaded successfully! Please select a gallery to view changes.')
   // Also update both galleries simultaneously
   store.image = data.image
-  console.log(store.image)
   // clear form once upload is successful
   $('#upload-form').trigger('reset')
 }
 
 const onNewImageFailure = function (event) {
-  failureAlert('New image uploaf failed')
+  failureAlert('Restaurant uploaded unsuccessfully. Please try again.')
 }
 
 const onIndexImageSuccess = function (data) {
-  console.log(data)
   // may NOT need actual success alert if already showing images to user
-  // successAlert('Here are all your images!')
+  successAlert('Restaurants retrieved successfully!')
   // handlebars incorporated here inside a div `#main-content-wrapper`
   const showImages = showImagesTemplate({ images: data.images })
   $('.image-section').text('')
@@ -61,14 +59,12 @@ const onIndexImageSuccess = function (data) {
 const onIndexImageFailure = function (data) {
   failureAlert('Unable to retrieve images')
 }
-
 const onIndexImagePrivateSuccess = function (data) {
-  console.log(data)
   const privateImages = data.images.filter(function (image) {
     return image.owner === store.user._id
   })
-  console.log(privateImages)
   const showImages = showImagesPrivateTemplate({ images: privateImages })
+  successAlert('Restaurants retrieved successfully!')
   $('.image-section').text('')
   $('.image-section').append(showImages)
   $('.title-section').text('')
@@ -85,37 +81,33 @@ const onFillUpdateModalSuccess = function (data) {
   $('.update-modal-body').append(fillModal)
 }
 
-const onGetImageSuccess = function (responseData) {
-  // console.log(responseData)
-  // needs to display all images
-}
-
-const onGetImageFailure = function () {
-  failureAlert('Unable to find the image')
-}
+// const onGetImageSuccess = function (responseData) {
+//   // needs to display all images
+// }
+//
+// const onGetImageFailure = function () {
+//   failureAlert('Unable to find restaurant. Please try again.')
+// }
 
 const onUpdateImageSuccess = function (responseData) {
-  successAlert('Updated successfully!')
+  successAlert('Restaurant updated successfully! Please select a gallery to view changes.')
   $('#update-image-modal').modal('toggle')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   // display the updated image/details
   // and also update the galleries simultaneously
-  // clear form once update is successful
-  // $('<form-element>').trigger('reset')
 }
 
 const onUpdateImageFailure = function () {
-  failureAlert('Unable to update')
+  failureAlert('Restaurant updated unsuccessfully. Please try again.')
 }
 
 const onDeleteImageSuccess = function (responseData) {
-  successAlert('Image deleted!')
-  imageEvents.onIndexImage(responseData)
+  successAlert('Restaurant deleted successfully! Please select a gallery to view changes.')
 }
 
 const onDeleteImageFailure = function () {
-  failureAlert('Unable to delete image')
+  failureAlert('Restaurant deleted unsuccessfully.  Please try again.')
 }
 
 module.exports = {
@@ -124,8 +116,8 @@ module.exports = {
   onIndexImageSuccess,
   onIndexImageFailure,
   onIndexImagePrivateSuccess,
-  onGetImageSuccess,
-  onGetImageFailure,
+  // onGetImageSuccess,
+  // onGetImageFailure,
   onUpdateImageSuccess,
   onUpdateImageFailure,
   onDeleteImageSuccess,

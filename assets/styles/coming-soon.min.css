@@ -103,6 +103,18 @@ video {
   text-transform: uppercase
 }
 
+.masthead .masthead-content .input-group-newsletter input {
+  height: 1rem;
+}
+
+.masthead .masthead-content .input-group-newsletter .alt-color {
+  height: 4rem;
+}
+
+.masthead .masthead-content .input-group-newsletter .btn-block {
+  height: 4rem;
+}
+
 .mb-3, .my-3 {
   margin-bottom: 1rem !important;
   padding-top: 2rem;
@@ -141,7 +153,7 @@ video {
 }
 
 #main-content-wrapper {
-  background-color: transparent;
+  background-color: rgba(0, 46, 102, .8);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
   height: 85%;
   margin-bottom: 2rem;
@@ -178,7 +190,7 @@ video {
 }
 
 .title-section {
-  background-color: #cd9557;
+  background-color: rgba(205,149,87,0.8);
   color: white;
   width: 100%;
   height: 5%;
@@ -191,24 +203,14 @@ video {
 }
 
 .image-section {
-  background-color: rgba(0, 46, 102, .6);
+  background-color: rgba(205,149,87,0.6);
   width: 100%;
-  height: 85%;
+  height: 95%;
   padding: 0.5rem;
   justify-content: center;
   display: flex;
   align-items: flex-start;
   overflow: auto;
-}
-
-.dialogue-section {
-  background-color: #cd9557;
-  color: white;
-  width: 100%;
-  height: 5%;
-  padding: 0 0.5rem;
-  display: flex;
-  align-items: center;
 }
 
 @media (min-width:1024px) {
@@ -319,7 +321,7 @@ video {
 div.alert {
   z-index: 4;
   position: absolute;
-  top: 3.5rem;
+  top: 3rem;
   width:100%;
 }
 
