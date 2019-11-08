@@ -60,7 +60,6 @@ const onFillUpdateModal = function(event) {
   console.log(formData.id)
   api.indexImage(formData.id)
     .then(ui.onFillUpdateModalSuccess)
-    // .catch(ui.onIndexImageFailure)
 }
 
 const onUpdateImage = function(event) {
@@ -69,8 +68,8 @@ const onUpdateImage = function(event) {
   const formData = getFormFields(form)
   console.log(formData)
   api.updateImage(formData)
-  //   .then(ui.onUpdateImageSuccess)
-  //   .catch(ui.onUpdateImageFailure)
+    .then(ui.onUpdateImageSuccess)
+    .catch(ui.onUpdateImageFailure)
 }
 
 const onDeleteImage = function(event) {
@@ -82,7 +81,7 @@ const onDeleteImage = function(event) {
   console.log(formData.id)
   api.deleteImage(formData.id)
     .then(ui.onDeleteImageSuccess)
-    // .catch(ui.onDeleteImageFailure)
+    .catch(ui.onDeleteImageFailure)
 }
 
 module.exports = {
