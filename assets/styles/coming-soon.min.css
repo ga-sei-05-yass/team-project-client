@@ -9,6 +9,9 @@ html {
 }
 
 body {
+  background-image: url('https://img1.10bestmedia.com/Images/Photos/250645/p-1523093-497207407064679-509749583-o_54_990x660_201404251230.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Source Sans Pro';
   font-weight: 300;
   height: 100%;
