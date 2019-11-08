@@ -73,7 +73,6 @@ const onIndexImagePrivateSuccess = function (data) {
   $('.image-section').append(showImages)
   $('.title-section').text('')
   $('.title-section').text('My Gallery')
-
 }
 
 const onFillUpdateModalSuccess = function (data) {
