@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BOS.EATS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+
+  <!-- Custom styles for this template -->
+  <!-- <link href="assets/css/coming-soon.min.css" rel="stylesheet"> -->
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="mb-1 navbar navbar-expand-lg">
+    <h1 class="nav-brand">BOS.EATS</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav ml-auto" id="navigation-bar" style="display:none">
+        <li class="nav-item active">
+          <button id="private-gallery" class="btn btn-secondary navbtn btn-lg" type="button">Private Gallery</button>
+        </li>
+        <li class="nav-item active">
+          <button id="public-gallery" class="btn btn-secondary navbtn btn-lg" type="button">Public Gallery</button>
+        </li>
+        <li class="nav-item active">
+          <button class="btn btn-secondary navbtn btn-lg" type="button" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+        </li>
+        <li class="nav-item active">
+          <button class="btn btn-secondary navbtn btn-lg" type="button" id="sign-out">Sign Out</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+  <!-- End Overlay -->
+
+  <div class="masthead">
+    <div class="masthead-bg"></div>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-12 my-auto">
+          <div id="landing-page" class="masthead-content text-white py-5 py-md-0">
+            <h1 class="mb-3">BOS.EATS!</h1>
+            <!-- <h1 class="mb-3">BOS.EATS</h1> -->
+            <p class="mb-5">Your guide to reminiscing and exploring Boston's eateries.</p>
+            <!-- <p class="mb-5">Developed by General Assembly SEI's Y.A.S.S. Team</p> -->
+            <div class="input-group input-group-newsletter">
+              <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+              <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+            </div>
+          </div>
+
+          <div id="main-page" class="masthead-content text-white py-5 py-md-0" style="display: none">
+            <h1 class="mb-3">Welcome!</h1>
+            <!-- <h1 class="mb-3">BOS.EATS</h1> -->
+            <p class="mb-5">Upload your EAT-ventures below!</p>
+            <!-- <p class="mb-5">Developed by General Assembly SEI's Y.A.S.S. Team</p> -->
+            <div class="input-group input-group-newsletter">
+
+              <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" class="form-control mb-4 alt-color" name="file">
+                <input type="text" name="tag" class="form-control mb-4" placeholder="Tag">
+                <input type="text" name="description" class="form-control mb-4" placeholder="Description">
+                <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Upload Photo">
+              </form>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap alert for auth -->
+  <div class="alert" hidden></div>
+
+  <!-- Main Content -->
+  <div id="main-content-wrapper" style="display: none">
+    <section class="title-section">
+      Select a Gallery
+    </section>
+
+    <section class="image-section">
+    </section>
+
+
+  </div>
+  <!-- Main Content End -->
+
+  <!-- Modals -->
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Sign Up Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-up'>
+            Sign Up<br>
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <button class="btn btn-primary btn-sm">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Sign In Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='sign-in'>
+            Sign In<br>
+            <input type="email" class="sign-in-modal" name="credentials[email]" placeholder="Enter Email">
+            <input type="password" name="credentials[password]" placeholder="Enter Password">
+            <button class="btn btn-primary btn-sm">Sign In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Change Password Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id='change-password'>
+            Change Password<br>
+            <input type="password" name="passwords[old]" placeholder="Old Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <button class="btn btn-primary btn-sm">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Modal -->
+  <div class="modal fade" id="update-image-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="auth-modal-title">Update Image Details Below:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="update-modal-body">
+          <!-- Update content goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Update Modal end -->
+  <!-- End Modals -->
+
+  <!-- Bootstrap core JavaScript -->
+  <!-- <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+
+  <!-- Custom scripts for this template -->
+  <!-- <script src="assets/scripts/coming-soon.min.js"></script> -->
+
+</body>
+
+</html>
